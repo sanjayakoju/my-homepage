@@ -1,0 +1,18 @@
+body {
+    background-color: #ffffff;
+}
+
+h2, h4 {
+    color: cornflowerblue;
+}
+
+.my-mood {
+    display: flex;
+}
+
+ul, ol {
+    font-family: "Arial Black", serif;
+    font-size: 10px;
+    font-weight: bold;
+}
+
