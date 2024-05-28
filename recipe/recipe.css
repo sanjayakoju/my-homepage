@@ -1,0 +1,100 @@
+/* General Body Styles */
+body {
+    background-image: url('images/silverware.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: #404040;
+    font-family: Georgia, Garamond, serif;
+    font-size: 11pt;
+}
+
+/* Main Heading */
+.main-heading {
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+    padding: 10px;
+    display: inline-block;
+    letter-spacing: 0.25em;
+}
+
+/* Other Headings */
+h2 {
+    font-size: 18pt;
+    font-weight: normal;
+    text-decoration: underline;
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+    padding: 5px;
+    display: inline-block;
+    letter-spacing: 0.25em;
+}
+
+/* Link Styles */
+a {
+    color: #A4A400;
+}
+
+/* Abbreviation Styles */
+abbr {
+    text-decoration: underline;
+    cursor: help;
+}
+
+/* Strikethrough Text */
+.strikethrough {
+    text-decoration: line-through;
+}
+
+/* Preformatted Text for Copyright */
+pre {
+    font-family: monospace;
+    white-space: pre;
+}
+
+/* Specific Abbreviation Tooltips */
+abbr[title]::after {
+    content: " (" attr(title) ")";
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+abbr:hover::after {
+    display: inline;
+}
+
+/* User Comment Section */
+.user-comment {
+    background-color: #F0F0F0;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.user-comment > div {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #FFFFA8;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+/* Emphasized Steps */
+ol > li > strong {
+    font-weight: bold;
+}
+
+/* Bullet List Styles */
+ul {
+    list-style-image: url('images/pie_icon.gif');
+}
