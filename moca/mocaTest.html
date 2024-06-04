@@ -1,0 +1,64 @@
+<!--The code below has a Mocha / Chai test for the function called 'earliestSpace' that takes 3 strings.-->
+
+<!--Write the earliestSpace function so that the test passes. You are free to copy / paste the code below so that you can work with it in your IDE.-->
+
+<!--Your answer to this question should just be your JavaScript code for the earliestSpace function.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>W2D1 Quiz</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        // initialize mocha
+        mocha.setup('bdd');
+        // chai has a lot of stuff, let's make assert global
+        let assert = chai.assert;
+
+    </script>
+
+    <script>
+        // write your code for the function earliestSpace() here
+        // remember it has to take 3 strings, not an array!
+
+
+        function earliestSpace(str1, str2, str3) {
+            const index1 = str1.indexOf(' ');
+            const index2 = str2.indexOf(' ');
+            const index3 = str3.indexOf(' ');
+
+            const indices = [index1, index2, index3];
+            const minIndex = Math.min(...indices.filter(index => index !== -1));
+
+            if (minIndex === index1) return str1;
+            if (minIndex === index2) return str2;
+            if (minIndex === index3) return str3;
+        }
+
+    </script>
+    <script>
+        describe("earliestSpace", function () {
+            it("takes 3 strings, and returns whicherver string has a space character at the lowest index",
+                function () {
+                    assert.equal("bla bla bla", earliestSpace("This is a test", "Where it checks for spaces",
+                        "bla bla bla"));
+                });
+        });
+
+    </script>
+</head>
+
+<body>
+<div id="mocha"></div>
+<script>
+    mocha.run();
+
+</script>
+</body>
+
+</html>
