@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moca Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+    <script>
+        mocha.setup('bdd')
+
+        let assert = chai.assert;
+
+        function sum(numbers) {
+            return numbers.reduce((a, b) => a + b, 0);
+        }
+
+        describe("Function Test", function () {
+            it("sum() Should return the sum of all numbers in an array", function () {
+                assert.equal(sum([1,2,3,4]), 10);
+                assert.equal(sum([10,20,3,4]), 37);
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="mocha">
+    <script>
+        mocha.run()
+    </script>
+</div>
+
+
+</body>
+</html>

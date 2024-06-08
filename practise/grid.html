@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf8">
+    <title>W1D6 Q2</title>
+    <style>
+        /* simple solution */
+        /*#container {*/
+        /*    display: grid;*/
+        /*    grid-template-areas: */
+        /*    'some text text'*/
+        /*    'some here there';*/
+        /*}*/
+        /*div {*/
+        /*    min-height: 100px;*/
+        /*}*/
+        /*#some {*/
+        /*    grid-area: some;*/
+        /*    background-color: #CCC;*/
+        /*}*/
+        /*#text {*/
+        /*    grid-area: text;*/
+        /*    background-color: #BBB;*/
+        /*}*/
+        /*#here {*/
+        /*    grid-area: here;*/
+        /*    background-color: #EEE;*/
+        /*}*/
+        /*#there {*/
+        /*    grid-area: there;*/
+        /*    background-color: #CCC;*/
+        /*}*/
+        /* Alternate solution (ignore the above css, 2nd solution only uses css below this comment */
+        div {
+            min-height: 100px;
+        }
+        #container {
+            display: grid;
+            /*grid-template-columns: 3;*/
+            /*grid-template-rows: 2;*/
+        }
+        #some {
+            grid-row: 1 / span 2;
+            background-color: #CCC;
+        }
+        #text {
+            grid-column: 2 / span 2;
+            background-color: #BBB;
+        }
+        #here {
+            background-color: #EEE;
+        }
+        #there {
+            background-color: #CCC;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="container">
+
+    <div id="some">some</div>
+    <div id="text">text</div>
+    <div id="here">here</div>
+    <div id="there">there</div>
+
+</div>
+</body>
+
+</html>
