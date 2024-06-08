@@ -11,7 +11,9 @@ function ChocolateCookie(size, noOfChocolate) {
     this.noOfChocolate = noOfChocolate;
 }
 
-ChocolateCookie.prototype.__proto__ = Cookie.prototype;
+// ChocolateCookie.prototype.__proto__ = Cookie.prototype;
+// Alternative way
+ChocolateCookie.prototype = Object.create(Cookie.prototype)
 
 ChocolateCookie.prototype.test = function () {
     if (this.noOfChocolate > 5) {
