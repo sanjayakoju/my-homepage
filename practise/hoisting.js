@@ -13,7 +13,7 @@ function outer(a, b) {
     }
 
     var x = 1;
-    console.log(`3: ${x} ${res.a} ${z}`); // 3 1 50 3
+    console.log(`3: ${x} ${res.a} ${z}`); // 3: 1 50 3
     return res;
 }
 
