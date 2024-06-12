@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Screen Lab</title>
+    <style>
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: lightblue;
+        }
+        .controls {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="controls">
+    <label for="width">Width:</label>
+    <input type="number" id="width" value="50"><br>
+    <label for="growthAmount">Growth Amount:</label>
+    <input type="number" id="growthAmount" value="10"><br>
+    <label for="interval">Interval (ms):</label>
+    <input type="number" id="interval" value="250"><br>
+    <label for="numberCircles">Number Circles:</label>
+    <input type="number" id="numberCircles" value="12"><br>
+    <button id="start">Start</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
