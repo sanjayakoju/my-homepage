@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Guess the Number</h1>
+<p>
+    The computer guessed: <strong id="current-guess"><%= currentGuess %></strong>
+    <a href="#" id="no">No</a>
+    <a href="#" id="yes">Yes</a>
+</p>
+<p>Number of guesses so far: <span id="guesses-count"><%= previousGuesses.length %></span></p>
+<ul id="guessed-list">
+    <% previousGuesses.forEach(function(guess) { %>
+        <li><%= guess %></li>
+    <% }); %>
+</ul>
+
+<script>
+    $(document).ready(function() {
+        $('#no, #yes').click(function(event) {
+            event.preventDefault();
+            $.get('/ajax', function(data) {
+                $('#current-guess').text(data.guess);
+                $('#guesses-count').text(data.guessed.length);
+                $('#guessed-list').empty();
+                data.guessed.forEach(function(guess) {
+                    $('#guessed-list').append('<li>' + guess + '</li>');
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

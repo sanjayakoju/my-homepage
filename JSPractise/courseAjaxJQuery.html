@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block and Course Selection</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        select {
+            font-size: 16px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Select Block and Course</h1>
+<select id="block">
+    <option value="January-April">January - April</option>
+    <option value="May-August">May - August</option>
+    <option value="September-December">September - December</option>
+</select>
+
+<select id="course">
+    <!-- This dropdown will be populated dynamically via AJAX -->
+</select>
+
+<script>
+    $(document).ready(function() {
+        $('#block').change(function() {
+            // Clear the Course dropdown before populating
+            $('#course').empty();
+
+            // Get the selected month block from the Block dropdown
+            var selectedBlock = $(this).val();
+
+            // Send a GET request to /course with selectedBlock as parameter
+            $.get('/course', { monthBlock: selectedBlock }, function(data) {
+                // Populate the Course dropdown with options from the JSON response
+                data.forEach(function(course) {
+                    $('#course').append(`<option value="${course.id}">${course.name}</option>`);
+                });
+            });
+        });
+    });
+
+</script>
+</body>
+</html>

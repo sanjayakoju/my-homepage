@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard with jQuery</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .b {
+            background-color: #d18b47; /* dark square color */
+            color: white;
+        }
+        .w {
+            background-color: #ffce9e; /* light square color */
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<table id="chessboard">
+    <tr>
+        <td class="b">&#9820;</td>
+        <td class="w">&#9822;</td>
+        <td class="b">&#9821;</td>
+        <td class="w">&#9819;</td>
+        <td class="b">&#9818;</td>
+        <td class="w">&#9821;</td>
+        <td class="b">&#9822;</td>
+        <td class="w">&#9820;</td>
+    </tr>
+    <tr>
+        <td class="w">&#9823;</td>
+        <td class="b">&#9823;</td>
+        <td class="w">&#9823;</td>
+        <td class="b">&#9823;</td>
+        <td class="w">&#9823;</td>
+        <td class="b">&#9823;</td>
+        <td class="w">&#9823;</td>
+        <td class="b">&#9823;</td>
+    </tr>
+    <tr>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+    </tr>
+    <tr>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+    </tr>
+    <tr>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+    </tr>
+    <tr>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+        <td class="w"></td>
+        <td class="b"></td>
+    </tr>
+    <tr>
+        <td class="b">&#9817;</td>
+        <td class="w">&#9817;</td>
+        <td class="b">&#9817;</td>
+        <td class="w">&#9817;</td>
+        <td class="b">&#9817;</td>
+        <td class="w">&#9817;</td>
+        <td class="b">&#9817;</td>
+        <td class="w">&#9817;</td>
+    </tr>
+    <tr>
+        <td class="w">&#9814;</td>
+        <td class="b">&#9816;</td>
+        <td class="w">&#9815;</td>
+        <td class="b">&#9813;</td>
+        <td class="w">&#9812;</td>
+        <td class="b">&#9815;</td>
+        <td class="w">&#9816;</td>
+        <td class="b">&#9814;</td>
+    </tr>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let selectedPiece = null; // To keep track of the selected piece
+
+        // Event handler for clicking on a chessboard square
+        $('#chessboard td').click(function() {
+            const currentText = $(this).text();
+
+            // If a piece is already selected
+            if (selectedPiece !== null) {
+                // Replace the text of the clicked square with the selected piece's text
+                $(this).text(selectedPiece);
+
+                // Clear the text of the previous square where the piece was moved from
+                $(selectedPiece).parent().text('');
+
+                // Reset selected piece
+                selectedPiece = null;
+            } else {
+                // If no piece is selected, check if the clicked square contains a piece
+                if (currentText !== '') {
+                    selectedPiece = currentText; // Store the piece's text
+                    $(this).text(''); // Clear the clicked square
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

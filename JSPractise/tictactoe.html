@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TicTacToe</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 200px;
+      height: 200px;
+    }
+    td {
+      border: 1px solid black;
+      width: 33.33%;
+      height: 33.33%;
+      text-align: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+</table>
+
+<script>
+  $(document).ready(function() {
+    let turn = 0; // Keep track of the turn
+
+    $('td').click(function() {
+      if ($(this).text() === '') { // Check if the cell is empty
+        if (turn % 2 === 0) {
+          $(this).text('X');
+        } else {
+          $(this).text('O');
+        }
+        turn++; // Increment turn after each click
+      }
+    });
+  });
+</script>
+</body>
+</html>
